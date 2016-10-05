@@ -23,6 +23,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 })
 
+.controller('ToDoController', function($scope) {
+	$scope.todos = [];
+	$scope.todoModel = {};
+	$scope.todoModel.todo = '';
+	$scope.addTodo = function() {
+		$scope.todos.push($scope.todoModel.todo);
+		$scope.todoModel = {
+			todo: ''
+		}
+	};
+})
+
+.directive('ngEnter', function () {
+    return function ($scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if(event.which === 13) {
+                $scope.$apply(function (){
+                    $scope.$eval(attrs.ngEnter);
+                });
+ 
+                event.preventDefault();
+            }
+        });
+    };
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
