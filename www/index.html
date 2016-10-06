@@ -39,22 +39,14 @@
       <ion-header-bar class="bar-stable">
         <h1 class="title">Asteroid Death</h1>
       </ion-header-bar>
-      <ion-content ng-controller="ToDoController">
-        <div class="list">
-          <div class="item item-input-inset">
-            <label class="item-input-wrapper">
-              <input type="text" placeholder="enter todo item" ng-enter="addTodo()" ng-model="todoModel.todo" />
-            </label>
-            <button class="button button-small" ng-click="addTodo()">
-              Add 
-            </button>
-          </div>
+      <ion-content ng-controller="AsteroidCtrl">
+        <div class="list"
+          <ul class="list">
+            <li class="item" ng-repeat="asteroid in asteroids">
+            {{asteroid}}
+            </li>
+          </ul>
         </div>
-        <ul class="list">
-          <li class="item" ng-repeat='todo in todos track by $index'>
-            {{todo}}
-          </li>
-        </ul>
       </ion-content>
     </ion-pane>
   </body>
