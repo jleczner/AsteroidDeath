@@ -1,18 +1,34 @@
-angular.module('starter.controllers', [])
+angular.module('app.controllers', [])
+  
+.controller('homeCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
 
-.controller('AsteroidCtrl', function($scope) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
-  $scope.asteroids = [];
-  $scope.asteroidsModel = {};
-  $scope.asteroidsModel.asteroid = '';
-  $scope.getClosest = function() {
-    // TODO
-  };
-});
+}])
+   
+.controller('AsteroidsListCtrl', function ($scope, NeoWsAPI) {
+	$scope.asteroids = NeoWsAPI.all();
+})
+
+.controller('AsteroidCtrl', function ($scope, $stateParams, NeoWsAPI) {
+	$scope.asteroids = NeoWsAPI.get($stateParams.asteroids["neo_reference_id"]);
+})
+   
+.controller('visualizeCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+   
+.controller('side-menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams) {
+
+
+}])
+ 

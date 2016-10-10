@@ -1,1 +1,8 @@
-/* Empty. Add your own CSS if you like */
+.bar.bar-light {
+	background: none;
+	background-color: rgba(255,255,255,.66);
+}
+
+.scroll-content {
+  overflow: visible !important;
+}
