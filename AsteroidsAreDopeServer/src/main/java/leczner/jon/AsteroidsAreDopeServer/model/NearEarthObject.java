@@ -160,6 +160,7 @@ public class NearEarthObject {
         this.orbitingBody = orbitingBody;
     }
 
+    @Override
     public String toString() {
         StringBuilder values = new StringBuilder("NEO(");
         values.append("Date: ");
