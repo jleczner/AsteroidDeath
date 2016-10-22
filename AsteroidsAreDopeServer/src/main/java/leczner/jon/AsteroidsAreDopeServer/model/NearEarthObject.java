@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class NearEarthObject {
     @Id
     private String date;
-    private String[] links;
+    private String link;
     private String neoReferenceId;
     private String name;
     private String nasaJplUrl;
@@ -27,13 +27,13 @@ public class NearEarthObject {
     public NearEarthObject() {
     }
 
-    public NearEarthObject(String date, String[] links, String neoReferenceId, String name,
+    public NearEarthObject(String date, String link, String neoReferenceId, String name,
                            String nasaJplUrl, Double absoluteMagnitudeH, Double estimatedDiameterMin,
                            Double estimatedDiameterMax, boolean isPotentiallyHazardous,
                            String closeApproachDate, Long epochDateCloseApproach, String relativeVelocity,
                            String missDistance, String orbitingBody) {
         this.date = date;
-        this.links = links;
+        this.link = link;
         this.neoReferenceId = neoReferenceId;
         this.name = name;
         this.nasaJplUrl = nasaJplUrl;
@@ -56,12 +56,12 @@ public class NearEarthObject {
         this.date = date;
     }
 
-    public String[] getLinks() {
-        return links;
+    public String getLink() {
+        return link;
     }
 
-    public void setLinks(String[] links) {
-        this.links = links;
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getNeoReferenceId() {
@@ -165,8 +165,8 @@ public class NearEarthObject {
         StringBuilder values = new StringBuilder("NEO(");
         values.append("Date: ");
         values.append(date);
-        values.append(", Links: ");
-        values.append(links);
+        values.append(", Link: ");
+        values.append(link);
         values.append("NEO Reference ID: ");
         values.append(neoReferenceId);
         return values.toString();
