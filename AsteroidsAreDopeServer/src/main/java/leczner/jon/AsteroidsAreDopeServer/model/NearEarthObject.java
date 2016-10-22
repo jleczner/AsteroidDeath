@@ -18,10 +18,8 @@ public class NearEarthObject {
     private Double estimatedDiameterMin;
     private Double estimatedDiameterMax;
     private boolean isPotentiallyHazardous;
-    private String closeApproachDate;
-    private Long epochDateCloseApproach;
-    private String relativeVelocity;
-    private String missDistance;
+    private String relativeVelocity; // km/s
+    private String missDistance; // astronomical units
     private String orbitingBody;
 
     public NearEarthObject() {
@@ -30,8 +28,7 @@ public class NearEarthObject {
     public NearEarthObject(String date, String link, String neoReferenceId, String name,
                            String nasaJplUrl, Double absoluteMagnitudeH, Double estimatedDiameterMin,
                            Double estimatedDiameterMax, boolean isPotentiallyHazardous,
-                           String closeApproachDate, Long epochDateCloseApproach, String relativeVelocity,
-                           String missDistance, String orbitingBody) {
+                           String relativeVelocity, String missDistance, String orbitingBody) {
         this.date = date;
         this.link = link;
         this.neoReferenceId = neoReferenceId;
@@ -41,8 +38,6 @@ public class NearEarthObject {
         this.estimatedDiameterMin = estimatedDiameterMin;
         this.estimatedDiameterMax = estimatedDiameterMax;
         this.isPotentiallyHazardous = isPotentiallyHazardous;
-        this.closeApproachDate = closeApproachDate;
-        this.epochDateCloseApproach = epochDateCloseApproach;
         this.relativeVelocity = relativeVelocity;
         this.missDistance = missDistance;
         this.orbitingBody = orbitingBody;
@@ -118,22 +113,6 @@ public class NearEarthObject {
 
     public void setPotentiallyHazardous(boolean potentiallyHazardous) {
         isPotentiallyHazardous = potentiallyHazardous;
-    }
-
-    public String getCloseApproachDate() {
-        return closeApproachDate;
-    }
-
-    public void setCloseApproachDate(String closeApproachDate) {
-        this.closeApproachDate = closeApproachDate;
-    }
-
-    public Long getEpochDateCloseApproach() {
-        return epochDateCloseApproach;
-    }
-
-    public void setEpochDateCloseApproach(Long epochDateCloseApproach) {
-        this.epochDateCloseApproach = epochDateCloseApproach;
     }
 
     public String getRelativeVelocity() {
