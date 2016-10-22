@@ -1,9 +1,14 @@
 package leczner.jon.AsteroidsAreDopeServer.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by jonathanleczner on 10/16/16.
  */
+@Entity
 public class NearEarthObject {
+    @Id
     private String date;
     private String[] links;
     private String neoReferenceId;
@@ -153,5 +158,16 @@ public class NearEarthObject {
 
     public void setOrbitingBody(String orbitingBody) {
         this.orbitingBody = orbitingBody;
+    }
+
+    public String toString() {
+        StringBuilder values = new StringBuilder("NEO(");
+        values.append("Date: ");
+        values.append(date);
+        values.append(", Links: ");
+        values.append(links);
+        values.append("NEO Reference ID: ");
+        values.append(neoReferenceId);
+        return values.toString();
     }
 }
