@@ -13,7 +13,7 @@ public class NearEarthObject {
     private String name;
     private String nasaJplUrl;
     private Double absoluteMagnitudeH;
-    private Double estimatedDiameterMin;
+    private Double estimatedDiameterMin; // meters
     private Double estimatedDiameterMax;
     private boolean isPotentiallyHazardous;
     private String relativeVelocity; // km/s
