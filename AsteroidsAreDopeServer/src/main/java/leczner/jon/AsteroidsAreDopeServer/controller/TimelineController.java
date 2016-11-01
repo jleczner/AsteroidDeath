@@ -5,6 +5,7 @@ import leczner.jon.AsteroidsAreDopeServer.model.NearEarthObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -28,6 +29,11 @@ public class TimelineController {
 
     @RequestMapping(value = "asteroids", method = RequestMethod.GET)
     public List<NearEarthObject> list() {
-        return null;
+        return NearEarthObjectStub.list();
+    }
+
+    @RequestMapping(value = "asteroids/{neoReferenceId}", method = RequestMethod.POST)
+    public NearEarthObject create(@RequestBody NearEarthObject neo) {
+        return NearEarthObjectStub.create(neo);
     }
 }

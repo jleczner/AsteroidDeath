@@ -1,4 +1,6 @@
-package leczner.jon.AsteroidsAreDopeServer.model;
+package leczner.jon.AsteroidsAreDopeServer.controller;
+
+import leczner.jon.AsteroidsAreDopeServer.model.NearEarthObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,4 +78,4 @@ public class NearEarthObjectStub {
         return nearEarthObjects.remove(id);
     }
 }
-}
+
