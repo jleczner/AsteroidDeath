@@ -21,3 +21,17 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
     }
   });
 })
+
+// .config(function($stateProvider, $urlRouterProvider) {
+//   $stateProvider
+//       .state('home', {
+//         abstract: true,
+//         url: "/home",
+//         templateUrl: "app/home/home.html"
+//       })
+//
+//       .state('timeline', {
+//         url: "/app",
+//         templateUrl: "app/layout/"
+//       })
+// });

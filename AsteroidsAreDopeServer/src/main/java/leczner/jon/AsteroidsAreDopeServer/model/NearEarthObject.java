@@ -9,25 +9,25 @@ import javax.persistence.Id;
 @Entity
 public class NearEarthObject {
     @Id
-    private String neoReferenceId;
+    private Long id;
     private String name;
     private String nasaJplUrl;
     private Double absoluteMagnitudeH;
     private Double estimatedDiameterMin; // meters
     private Double estimatedDiameterMax;
     private boolean isPotentiallyHazardous;
-    private String relativeVelocity; // km/s
-    private String missDistance; // astronomical units
+    private Double relativeVelocity; // km/s
+    private Double missDistance; // astronomical units
     private String orbitingBody;
 
     public NearEarthObject() {
     }
 
-    public NearEarthObject(String neoReferenceId, String name,
+    public NearEarthObject(Long id, String name,
                            String nasaJplUrl, Double absoluteMagnitudeH, Double estimatedDiameterMin,
                            Double estimatedDiameterMax, boolean isPotentiallyHazardous,
-                           String relativeVelocity, String missDistance, String orbitingBody) {
-        this.neoReferenceId = neoReferenceId;
+                           Double relativeVelocity, Double missDistance, String orbitingBody) {
+        this.id = id;
         this.name = name;
         this.nasaJplUrl = nasaJplUrl;
         this.absoluteMagnitudeH = absoluteMagnitudeH;
@@ -38,12 +38,12 @@ public class NearEarthObject {
         this.missDistance = missDistance;
         this.orbitingBody = orbitingBody;
     }
-    public String getNeoReferenceId() {
-        return neoReferenceId;
+    public Long getId() {
+        return id;
     }
 
-    public void setNeoReferenceId(String neoReferenceId) {
-        this.neoReferenceId = neoReferenceId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -94,19 +94,19 @@ public class NearEarthObject {
         isPotentiallyHazardous = potentiallyHazardous;
     }
 
-    public String getRelativeVelocity() {
+    public Double getRelativeVelocity() {
         return relativeVelocity;
     }
 
-    public void setRelativeVelocity(String relativeVelocity) {
+    public void setRelativeVelocity(Double relativeVelocity) {
         this.relativeVelocity = relativeVelocity;
     }
 
-    public String getMissDistance() {
+    public Double getMissDistance() {
         return missDistance;
     }
 
-    public void setMissDistance(String missDistance) {
+    public void setMissDistance(Double missDistance) {
         this.missDistance = missDistance;
     }
 
@@ -121,8 +121,8 @@ public class NearEarthObject {
     @Override
     public String toString() {
         StringBuilder values = new StringBuilder("NEO(");
-        values.append("NEO Reference ID: ");
-        values.append(neoReferenceId);
+        values.append("ID: ");
+        values.append(id);
         return values.toString();
     }
 }
