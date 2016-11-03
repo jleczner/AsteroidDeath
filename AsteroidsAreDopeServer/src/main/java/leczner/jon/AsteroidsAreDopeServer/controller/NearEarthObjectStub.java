@@ -12,7 +12,7 @@ import java.util.Map;
  */
 public class NearEarthObjectStub {
     private static Map<Long, NearEarthObject> nearEarthObjects = new HashMap<>();
-    private static Long idIndex;
+    private static Long idIndex = 2465633L;
 
     static {
         NearEarthObject test1 = new NearEarthObject(
