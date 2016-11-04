@@ -27,8 +27,8 @@ public class NearEarthObjectController {
     }
 
     @RequestMapping(value = "asteroids/{neoReferenceId}", method = RequestMethod.GET)
-    public NearEarthObject get(@PathVariable String neoReferenceId) {
-        return NearEarthObjectStub.get(neoReferenceId);
+    public NearEarthObject get(@PathVariable Long id) {
+        return NearEarthObjectStub.get(id);
     }
 
     @RequestMapping(value = "asteroids", method = RequestMethod.POST)
