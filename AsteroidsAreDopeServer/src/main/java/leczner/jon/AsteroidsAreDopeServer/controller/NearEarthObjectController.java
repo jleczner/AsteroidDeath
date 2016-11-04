@@ -23,16 +23,16 @@ public class NearEarthObjectController {
 
     @RequestMapping(value = "asteroids", method = RequestMethod.GET)
     public List<NearEarthObject> list() {
-        return NearEarthObjectStub.list();
+        return repo.findAll();
     }
 
     @RequestMapping(value = "asteroids/{id}", method = RequestMethod.GET)
     public NearEarthObject get(@PathVariable Long id) {
-        return NearEarthObjectStub.get(id);
+        return repo.findOne(id);
     }
 
     @RequestMapping(value = "asteroids", method = RequestMethod.POST)
     public NearEarthObject create(@RequestBody NearEarthObject neo) {
-        return NearEarthObjectStub.create(neo);
+        return repo.saveAndFlush(neo);
     }
 }
