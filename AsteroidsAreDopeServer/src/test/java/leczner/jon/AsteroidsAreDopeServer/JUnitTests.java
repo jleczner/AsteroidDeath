@@ -5,9 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest
-public class AsteroidsAreDopeServerApplicationTests {
+public class JUnitTests {
 
 	@Test
 	public void appTest() {

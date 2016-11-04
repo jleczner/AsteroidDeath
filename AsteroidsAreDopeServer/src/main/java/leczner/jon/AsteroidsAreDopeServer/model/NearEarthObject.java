@@ -21,6 +21,7 @@ public class NearEarthObject {
     private String orbitingBody;
 
     public NearEarthObject() {
+        id = -1L;
     }
 
     public NearEarthObject(Long id, String name,
