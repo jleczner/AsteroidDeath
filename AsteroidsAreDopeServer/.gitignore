@@ -31,8 +31,8 @@ Temporary Items
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-*.idea/workspace.xml
-*.idea/tasks.xml
+.idea/workspace.xml
+.idea/tasks.xml
 
 # Sensitive or high-churn files:
 *.idea/dataSources.ids
@@ -80,10 +80,11 @@ modules.xml
 
 ### Git ###
 *.orig
-.gitignore
+.gitignore*
 
 ### Java ###
 *.class
+target
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
