@@ -1,21 +1,22 @@
 package leczner.jon.AsteroidsAreDopeServer.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 /**
  * Created by jonathanleczner on 10/16/16.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class NearEarthObjectList {
-    private List<String> links;
-    private int elementCount;
+    private Links links;
     private List<NearEarthObject> nearEarthObjects;
 
     public NearEarthObjectList() {
     }
 
-    public NearEarthObjectList(List<String> links, int elementCount, List<NearEarthObject> nearEarthObjects) {
+    public NearEarthObjectList(List<String> links, List<NearEarthObject> nearEarthObjects) {
         this.links = links;
-        this.elementCount = elementCount;
         this.nearEarthObjects = nearEarthObjects;
     }
 
@@ -27,19 +28,23 @@ public class NearEarthObjectList {
         this.links = links;
     }
 
-    public int getElementCount() {
-        return elementCount;
-    }
-
-    public void setElementCount(int elementCount) {
-        this.elementCount = elementCount;
-    }
-
     public List<NearEarthObject> getNearEarthObjects() {
         return nearEarthObjects;
     }
 
     public void setNearEarthObjects(List<NearEarthObject> nearEarthObjects) {
         this.nearEarthObjects = nearEarthObjects;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Near Earth Objects (size=");
+        stringBuilder.append(nearEarthObjects.size());
+        stringBuilder.append(")\n");
+        for (NearEarthObject neo: nearEarthObjects) {
+            stringBuilder.append(neo.toString() + "\n");
+        }
+        return stringBuilder.toString();
     }
 }
