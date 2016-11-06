@@ -1,53 +1,42 @@
 package leczner.jon.AsteroidsAreDopeServer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.persistence.Id;
 
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 /**
  * Created by jonathanleczner on 10/16/16.
  */
-@Document(collection = "asteroids")
+//@Document(collection = "asteroids")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NearEarthObject {
-    @Id
+//    @Id
+    private NeoLinks links;
     private String neo_reference_id;
     private String name;
-    private String nasaJplUrl;
-    private Double absoluteMagnitudeH;
-    private Double estimatedDiameterMin; // meters
-    private Double estimatedDiameterMax;
-    private boolean isPotentiallyHazardous;
-    private Double relativeVelocity; // km/s
-    private Double missDistance; // astronomical units
-    private String orbitingBody;
+    private String nasa_jpl_url;
+    private double absolute_magnitude_h;
+    private EstimatedDiameter estimated_diameter;
+    private boolean is_potentially_hazardous_asteroid;
+    private CloseApproachDataList close_approach_data;
+    private OrbitalData orbital_data;
 
     public NearEarthObject() {
     }
 
-    public NearEarthObject(String neo_reference_id, String name,
-                           String nasaJplUrl, Double absoluteMagnitudeH, Double estimatedDiameterMin,
-                           Double estimatedDiameterMax, boolean isPotentiallyHazardous,
-                           Double relativeVelocity, Double missDistance, String orbitingBody) {
-        this.neo_reference_id = neo_reference_id;
-        this.name = name;
-        this.nasaJplUrl = nasaJplUrl;
-        this.absoluteMagnitudeH = absoluteMagnitudeH;
-        this.estimatedDiameterMin = estimatedDiameterMin;
-        this.estimatedDiameterMax = estimatedDiameterMax;
-        this.isPotentiallyHazardous = isPotentiallyHazardous;
-        this.relativeVelocity = relativeVelocity;
-        this.missDistance = missDistance;
-        this.orbitingBody = orbitingBody;
+    public NeoLinks getLinks() {
+        return links;
     }
-    public String getId() {
+
+    public void setLinks(NeoLinks links) {
+        this.links = links;
+    }
+
+    public String getNeo_reference_id() {
         return neo_reference_id;
     }
 
-    public void setId(String neo_reference_id) {
+    public void setNeo_reference_id(String neo_reference_id) {
         this.neo_reference_id = neo_reference_id;
     }
 
@@ -59,68 +48,52 @@ public class NearEarthObject {
         this.name = name;
     }
 
-    public String getNasaJplUrl() {
-        return nasaJplUrl;
+    public String getNasa_jpl_url() {
+        return nasa_jpl_url;
     }
 
-    public void setNasaJplUrl(String nasaJplUrl) {
-        this.nasaJplUrl = nasaJplUrl;
+    public void setNasa_jpl_url(String nasa_jpl_url) {
+        this.nasa_jpl_url = nasa_jpl_url;
     }
 
-    public Double getAbsoluteMagnitudeH() {
-        return absoluteMagnitudeH;
+    public Double getAbsolute_magnitude_h() {
+        return absolute_magnitude_h;
     }
 
-    public void setAbsoluteMagnitudeH(Double absoluteMagnitudeH) {
-        this.absoluteMagnitudeH = absoluteMagnitudeH;
+    public void setAbsolute_magnitude_h(Double absolute_magnitude_h) {
+        this.absolute_magnitude_h = absolute_magnitude_h;
     }
 
-    public Double getEstimatedDiameterMin() {
-        return estimatedDiameterMin;
+    public EstimatedDiameter getEstimated_diameter() {
+        return estimated_diameter;
     }
 
-    public void setEstimatedDiameterMin(Double estimatedDiameterMin) {
-        this.estimatedDiameterMin = estimatedDiameterMin;
+    public void setEstimated_diameter(EstimatedDiameter estimated_diameter) {
+        this.estimated_diameter = estimated_diameter;
     }
 
-    public Double getEstimatedDiameterMax() {
-        return estimatedDiameterMax;
+    public boolean is_potentially_hazardous_asteroid() {
+        return is_potentially_hazardous_asteroid;
     }
 
-    public void setEstimatedDiameterMax(Double estimatedDiameterMax) {
-        this.estimatedDiameterMax = estimatedDiameterMax;
+    public void setIs_potentially_hazardous_asteroid(boolean is_potentially_hazardous_asteroid) {
+        this.is_potentially_hazardous_asteroid = is_potentially_hazardous_asteroid;
     }
 
-    public boolean isPotentiallyHazardous() {
-        return isPotentiallyHazardous;
+    public CloseApproachDataList getClose_approach_data() {
+        return close_approach_data;
     }
 
-    public void setPotentiallyHazardous(boolean potentiallyHazardous) {
-        isPotentiallyHazardous = potentiallyHazardous;
+    public void setClose_approach_data(CloseApproachDataList close_approach_data) {
+        this.close_approach_data = close_approach_data;
     }
 
-    public Double getRelativeVelocity() {
-        return relativeVelocity;
+    public OrbitalData getOrbital_data() {
+        return orbital_data;
     }
 
-    public void setRelativeVelocity(Double relativeVelocity) {
-        this.relativeVelocity = relativeVelocity;
-    }
-
-    public Double getMissDistance() {
-        return missDistance;
-    }
-
-    public void setMissDistance(Double missDistance) {
-        this.missDistance = missDistance;
-    }
-
-    public String getOrbitingBody() {
-        return orbitingBody;
-    }
-
-    public void setOrbitingBody(String orbitingBody) {
-        this.orbitingBody = orbitingBody;
+    public void setOrbital_data(OrbitalData orbital_data) {
+        this.orbital_data = orbital_data;
     }
 
     @Override
