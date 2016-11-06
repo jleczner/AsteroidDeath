@@ -28,13 +28,13 @@ public class WebIntegrationTest {
 
     @Before
     public void setup() {
-        given(this.neoCtrl.get(-1L))
+        given(this.neoCtrl.get("-1"))
                 .willReturn(new NearEarthObject());
     }
 
     @Test
     public void test() {
-        this.restTemplate.getForEntity("http://localhost:8080/api/v1/asteroids/{id}", Long.class, -1L);
+        this.restTemplate.getForEntity("http://localhost:8080/api/v1/asteroids/{id}", String.class, "-1");
     }
 }
 

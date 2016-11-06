@@ -27,12 +27,12 @@ public class NearEarthObjectController {
     }
 
     @RequestMapping(value = "asteroids/{id}", method = RequestMethod.GET)
-    public NearEarthObject get(@PathVariable Long id) {
+    public NearEarthObject get(@PathVariable String id) {
         return repo.findOne(id);
     }
 
     @RequestMapping(value = "asteroids", method = RequestMethod.POST)
     public NearEarthObject create(@RequestBody NearEarthObject neo) {
-        return repo.saveAndFlush(neo);
+        return repo.save(neo);
     }
 }

@@ -33,11 +33,11 @@ public class NearEarthObjectControllerTest {
     @Test
     public void neoGetTest() {
         NearEarthObject neo = new NearEarthObject();
-        neo.setId(3726710L);
-        when(repo.findOne(3726710L)).thenReturn(neo);
-        NearEarthObject nearEarthObject = neoCtrl.get(3726710L);
-        verify(repo).findOne(3726710L);
+        neo.setId("3726710");
+        when(repo.findOne("3726710")).thenReturn(neo);
+        NearEarthObject nearEarthObject = neoCtrl.get("3726710");
+        verify(repo).findOne("3726710");
 //        assertEquals(3726710L, nearEarthObject.getId().longValue());
-        assertThat(neo.getId(), is(3726710L));
+        assertThat(neo.getId(), is("3726710"));
     }
 }

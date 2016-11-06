@@ -11,12 +11,12 @@ import java.util.Map;
  * Created by jonathanleczner on 10/23/16.
  */
 public class NearEarthObjectStub {
-    private static Map<Long, NearEarthObject> nearEarthObjects = new HashMap<>();
-    private static Long idIndex = 2465633L;
+    private static Map<String, NearEarthObject> nearEarthObjects = new HashMap<>();
+    private static String idIndex = "2465633";
 
     static {
         NearEarthObject test1 = new NearEarthObject(
-					3726710L,
+					"3726710",
 					"(2015 RC)",
 					"http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3726710",
 					24.3,
@@ -26,10 +26,10 @@ public class NearEarthObjectStub {
 					19.4701053405,
 					0.0269024393,
 					"Earth");
-        nearEarthObjects.put(3726710L, test1);
+        nearEarthObjects.put("3726710", test1);
 
         NearEarthObject test2 = new NearEarthObject(
-                3730577L,
+                "3730577",
                 "(2015 TX237)",
                 "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3730577",
                 23.3,
@@ -39,10 +39,10 @@ public class NearEarthObjectStub {
                 6.5730424387,
                 0.0795210946,
                 "Earth");
-        nearEarthObjects.put(3730577L, test2);
+        nearEarthObjects.put("3730577", test2);
 
         NearEarthObject test3 = new NearEarthObject(
-                2465633L,
+                "2465633",
                 "465633 (2009 JR5)",
                 "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2465633",
                 20.3,
@@ -52,7 +52,7 @@ public class NearEarthObjectStub {
                 18.1279766789,
                 0.3027491578,
                 "Earth");
-        nearEarthObjects.put(2465633L, test3);
+        nearEarthObjects.put("2465633", test3);
     }
 
     public static List<NearEarthObject> list() {

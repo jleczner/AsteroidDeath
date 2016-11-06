@@ -1,5 +1,7 @@
 package leczner.jon.AsteroidsAreDopeServer.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,9 +9,10 @@ import javax.persistence.Id;
  * Created by jonathanleczner on 10/16/16.
  */
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class NearEarthObject {
     @Id
-    private Long id;
+    private String id;
     private String name;
     private String nasaJplUrl;
     private Double absoluteMagnitudeH;
@@ -21,10 +24,10 @@ public class NearEarthObject {
     private String orbitingBody;
 
     public NearEarthObject() {
-        id = -1L;
+        id = "-1";
     }
 
-    public NearEarthObject(Long id, String name,
+    public NearEarthObject(String id, String name,
                            String nasaJplUrl, Double absoluteMagnitudeH, Double estimatedDiameterMin,
                            Double estimatedDiameterMax, boolean isPotentiallyHazardous,
                            Double relativeVelocity, Double missDistance, String orbitingBody) {
@@ -39,11 +42,11 @@ public class NearEarthObject {
         this.missDistance = missDistance;
         this.orbitingBody = orbitingBody;
     }
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
