@@ -1,18 +1,20 @@
 package leczner.jon.AsteroidsAreDopeServer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 /**
  * Created by jonathanleczner on 10/16/16.
  */
-@Entity
+@Document(collection = "asteroids")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NearEarthObject {
     @Id
-    private String id;
+    private String neo_reference_id;
     private String name;
     private String nasaJplUrl;
     private Double absoluteMagnitudeH;
@@ -24,14 +26,13 @@ public class NearEarthObject {
     private String orbitingBody;
 
     public NearEarthObject() {
-        id = "-1";
     }
 
-    public NearEarthObject(String id, String name,
+    public NearEarthObject(String neo_reference_id, String name,
                            String nasaJplUrl, Double absoluteMagnitudeH, Double estimatedDiameterMin,
                            Double estimatedDiameterMax, boolean isPotentiallyHazardous,
                            Double relativeVelocity, Double missDistance, String orbitingBody) {
-        this.id = id;
+        this.neo_reference_id = neo_reference_id;
         this.name = name;
         this.nasaJplUrl = nasaJplUrl;
         this.absoluteMagnitudeH = absoluteMagnitudeH;
@@ -43,11 +44,11 @@ public class NearEarthObject {
         this.orbitingBody = orbitingBody;
     }
     public String getId() {
-        return id;
+        return neo_reference_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String neo_reference_id) {
+        this.neo_reference_id = neo_reference_id;
     }
 
     public String getName() {
@@ -127,6 +128,7 @@ public class NearEarthObject {
         StringBuilder values = new StringBuilder("NEO(");
         values.append("ID: ");
         values.append(id);
+        values.append(")");
         return values.toString();
     }
 }

@@ -1,34 +1,20 @@
 package leczner.jon.AsteroidsAreDopeServer;
 
-import leczner.jon.AsteroidsAreDopeServer.model.NearEarthObject;
-import leczner.jon.AsteroidsAreDopeServer.model.NearEarthObjectRepository;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-import static org.hamcrest.Matchers.is;
-
 /**
  * Created by jonathanleczner on 11/4/16.
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class RepoIntegrationTest {
-    @Autowired
-    private NearEarthObjectRepository repo;
-
-    @Test
-    public void testFindAll() {
-        List<NearEarthObject> NEOs = repo.findAll();
-        assertThat(NEOs.size(), is(greaterThanOrEqualTo(0)));
-    }
-}
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//public class RepoIntegrationTest {
+//    @Autowired
+//    private NearEarthObjectRepository repo;
+//
+//    @Test
+//    public void testFindAll() {
+//        List<NearEarthObject> NEOs = repo.findAll();
+//        assertThat(NEOs.size(), is(greaterThanOrEqualTo(0)));
+//    }
+//}
 
 //
 //@RunWith(SpringRunner.class)
