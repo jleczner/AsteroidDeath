@@ -18,7 +18,7 @@ public class NearEarthObject {
     private double absolute_magnitude_h;
     private EstimatedDiameter estimated_diameter;
     private boolean is_potentially_hazardous_asteroid;
-    private CloseApproachDataList close_approach_data;
+    private CloseApproachData[] close_approach_data;
     private OrbitalData orbital_data;
 
     public NearEarthObject() {
@@ -80,11 +80,11 @@ public class NearEarthObject {
         this.is_potentially_hazardous_asteroid = is_potentially_hazardous_asteroid;
     }
 
-    public CloseApproachDataList getClose_approach_data() {
+    public CloseApproachData[] getClose_approach_data() {
         return close_approach_data;
     }
 
-    public void setClose_approach_data(CloseApproachDataList close_approach_data) {
+    public void setClose_approach_data(CloseApproachData[] close_approach_data) {
         this.close_approach_data = close_approach_data;
     }
 

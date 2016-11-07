@@ -27,9 +27,9 @@ public class AsteroidsAreDopeServerApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			NearEarthObjectBrowse nearEarthObjectList = restTemplate.getForObject(
+			NearEarthObjectBrowse neoList = restTemplate.getForObject(
 					"https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=" + apiKey, NearEarthObjectBrowse.class);
-			log.info(nearEarthObjectList.toString());
+			log.info(neoList.toString());
 		};
 	}
 }

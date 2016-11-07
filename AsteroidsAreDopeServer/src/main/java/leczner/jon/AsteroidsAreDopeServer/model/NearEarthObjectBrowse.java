@@ -14,12 +14,12 @@ public class NearEarthObjectBrowse {
     @Id
     private Links links;
     private Page page;
-    private NearEarthObjectList near_earth_objects;
+    private NearEarthObject[] near_earth_objects;
 
     public NearEarthObjectBrowse() {
     }
 
-    public NearEarthObjectBrowse(Links links, Page page, NearEarthObjectList near_earth_objects) {
+    public NearEarthObjectBrowse(Links links, Page page, NearEarthObject[] near_earth_objects) {
         this.links = links;
         this.page = page;
         this.near_earth_objects = near_earth_objects;
@@ -41,11 +41,11 @@ public class NearEarthObjectBrowse {
         this.page = page;
     }
 
-    public NearEarthObjectList getNearEarthObjects() {
+    public NearEarthObject[] getNearEarthObjects() {
         return near_earth_objects;
     }
 
-    public void setNearEarthObjects(NearEarthObjectList near_earth_objects) {
+    public void setNearEarthObjects(NearEarthObject[] near_earth_objects) {
         this.near_earth_objects = near_earth_objects;
     }
 
@@ -53,11 +53,11 @@ public class NearEarthObjectBrowse {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Near Earth Objects (size=");
-        int length = (near_earth_objects == null) ? 0 : near_earth_objects.getNear_earth_objects().length;
+        int length = (near_earth_objects == null) ? 0 : near_earth_objects.length;
         stringBuilder.append(length);
         stringBuilder.append(")\n");
         while (near_earth_objects != null) {
-            for (NearEarthObject neo : near_earth_objects.getNear_earth_objects()) {
+            for (NearEarthObject neo : near_earth_objects) {
                 stringBuilder.append(neo.toString());
                 stringBuilder.append("\n");
             }
