@@ -1,25 +1,24 @@
 package leczner.jon.AsteroidsAreDopeServer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Id;
+import java.util.List;
 
 /**
  * Created by jonathanleczner on 10/16/16.
  */
-@Document(collection = "asteroids")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NearEarthObjectBrowse {
-    @Id
     private Links links;
     private Page page;
-    private NearEarthObject[] near_earth_objects;
+    @JsonProperty("near_earth_objects")
+    private List<NearEarthObject> near_earth_objects;
 
     public NearEarthObjectBrowse() {
     }
 
-    public NearEarthObjectBrowse(Links links, Page page, NearEarthObject[] near_earth_objects) {
+    public NearEarthObjectBrowse(Links links, Page page, List<NearEarthObject> near_earth_objects) {
         this.links = links;
         this.page = page;
         this.near_earth_objects = near_earth_objects;
@@ -41,11 +40,11 @@ public class NearEarthObjectBrowse {
         this.page = page;
     }
 
-    public NearEarthObject[] getNearEarthObjects() {
+    public List<NearEarthObject> getNearEarthObjects() {
         return near_earth_objects;
     }
 
-    public void setNearEarthObjects(NearEarthObject[] near_earth_objects) {
+    public void setNearEarthObjects(List<NearEarthObject> near_earth_objects) {
         this.near_earth_objects = near_earth_objects;
     }
 
@@ -53,7 +52,7 @@ public class NearEarthObjectBrowse {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Near Earth Objects (size=");
-        int length = (near_earth_objects == null) ? 0 : near_earth_objects.length;
+        int length = (near_earth_objects == null) ? 0 : near_earth_objects.size();
         stringBuilder.append(length);
         stringBuilder.append(")\n");
         while (near_earth_objects != null) {

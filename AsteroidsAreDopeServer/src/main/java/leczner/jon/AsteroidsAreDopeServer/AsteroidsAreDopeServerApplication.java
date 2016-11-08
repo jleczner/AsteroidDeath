@@ -12,7 +12,9 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class AsteroidsAreDopeServerApplication {
+	private static final String apiLink = "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=";
 	private static final String apiKey = "xw7eYH1YqEemakwQoq59XaHEVhDmW2cYFbTF0FTm";
+	private static final String apiFullURL = apiLink + apiKey;
 	private static final Logger log = LoggerFactory.getLogger(AsteroidsAreDopeServerApplication.class);
 
 	public static void main(String[] args) {
@@ -28,8 +30,15 @@ public class AsteroidsAreDopeServerApplication {
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
 			NearEarthObjectBrowse neoList = restTemplate.getForObject(
-					"https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=" + apiKey, NearEarthObjectBrowse.class);
+					apiFullURL, NearEarthObjectBrowse.class);
 			log.info(neoList.toString());
 		};
+//		return args -> {
+//			ResponseEntity<Object[]> responseEntity =
+//					restTemplate.getForEntity(apiFullURL, Object[].class);
+//			Object[] apiObjects = responseEntity.getBody();
+//			MediaType contentType = responseEntity.getHeaders().getContentType();
+//			HttpStatus statusCode = responseEntity.getStatusCode();
+//		};
 	}
 }

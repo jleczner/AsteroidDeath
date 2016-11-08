@@ -1,24 +1,27 @@
 package leczner.jon.AsteroidsAreDopeServer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+import javax.persistence.Id;
+import java.util.List;
 
 /**
  * Created by jonathanleczner on 10/16/16.
  */
-//@Document(collection = "asteroids")
+@Document(collection = "asteroids")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NearEarthObject {
-//    @Id
+
     private NeoLinks links;
+    @Id
     private String neo_reference_id;
     private String name;
     private String nasa_jpl_url;
     private double absolute_magnitude_h;
     private EstimatedDiameter estimated_diameter;
     private boolean is_potentially_hazardous_asteroid;
-    private CloseApproachData[] close_approach_data;
+    private List<CloseApproachData> close_approach_data;
     private OrbitalData orbital_data;
 
     public NearEarthObject() {
@@ -80,11 +83,11 @@ public class NearEarthObject {
         this.is_potentially_hazardous_asteroid = is_potentially_hazardous_asteroid;
     }
 
-    public CloseApproachData[] getClose_approach_data() {
+    public List<CloseApproachData> getClose_approach_data() {
         return close_approach_data;
     }
 
-    public void setClose_approach_data(CloseApproachData[] close_approach_data) {
+    public void setClose_approach_data(List<CloseApproachData> close_approach_data) {
         this.close_approach_data = close_approach_data;
     }
 
@@ -100,7 +103,7 @@ public class NearEarthObject {
     public String toString() {
         StringBuilder values = new StringBuilder("NEO(");
         values.append("ID: ");
-        values.append(id);
+        values.append(neo_reference_id);
         values.append(")");
         return values.toString();
     }
