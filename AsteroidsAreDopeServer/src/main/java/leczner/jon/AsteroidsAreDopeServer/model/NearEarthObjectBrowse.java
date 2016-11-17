@@ -13,15 +13,15 @@ public class NearEarthObjectBrowse {
     private Links links;
     private Page page;
     @JsonProperty("near_earth_objects")
-    private List<NearEarthObject> near_earth_objects;
+    private List<NearEarthObject> nearEarthObjects;
 
     public NearEarthObjectBrowse() {
     }
 
-    public NearEarthObjectBrowse(Links links, Page page, List<NearEarthObject> near_earth_objects) {
+    public NearEarthObjectBrowse(Links links, Page page, List<NearEarthObject> nearEarthObjects) {
         this.links = links;
         this.page = page;
-        this.near_earth_objects = near_earth_objects;
+        this.nearEarthObjects = nearEarthObjects;
     }
 
     public Links getLinks() {
@@ -41,26 +41,24 @@ public class NearEarthObjectBrowse {
     }
 
     public List<NearEarthObject> getNearEarthObjects() {
-        return near_earth_objects;
+        return nearEarthObjects;
     }
 
-    public void setNearEarthObjects(List<NearEarthObject> near_earth_objects) {
-        this.near_earth_objects = near_earth_objects;
+    public void setNearEarthObjects(List<NearEarthObject> nearEarthObjects) {
+        this.nearEarthObjects = nearEarthObjects;
     }
 
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Near Earth Objects (size=");
-        int length = (near_earth_objects == null) ? 0 : near_earth_objects.size();
+        int length = (nearEarthObjects == null) ? 0 : nearEarthObjects.size();
         stringBuilder.append(length);
-        stringBuilder.append(")\n");
-        while (near_earth_objects != null) {
-            for (NearEarthObject neo : near_earth_objects) {
-                stringBuilder.append(neo.toString());
-                stringBuilder.append("\n");
-            }
-        }
+        stringBuilder.append("); ");
+        stringBuilder.append("Page ");
+        stringBuilder.append(page.getNumber());
+        stringBuilder.append(" of ");
+        stringBuilder.append(page.getTotalPages());
         return stringBuilder.toString();
     }
 }

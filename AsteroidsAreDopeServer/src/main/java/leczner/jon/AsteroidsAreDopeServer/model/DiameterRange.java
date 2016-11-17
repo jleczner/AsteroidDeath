@@ -7,24 +7,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiameterRange {
-    private double estimated_diameter_min;
-    private double estimated_diameter_max;
+    private double estimatedDiameterMin;
+    private double estimatedDiameterMax;
 
     public DiameterRange() {}
 
-    public double getEstimated_diameter_min() {
-        return estimated_diameter_min;
+    public double getEstimatedDiameterMin() {
+        return estimatedDiameterMin;
     }
 
-    public void setEstimated_diameter_min(double estimated_diameter_min) {
-        this.estimated_diameter_min = estimated_diameter_min;
+    public void setEstimatedDiameterMin(double estimatedDiameterMin) {
+        this.estimatedDiameterMin = estimatedDiameterMin;
     }
 
-    public double getEstimated_diameter_max() {
-        return estimated_diameter_max;
+    public double getEstimatedDiameterMax() {
+        return estimatedDiameterMax;
     }
 
-    public void setEstimated_diameter_max(double estimated_diameter_max) {
-        this.estimated_diameter_max = estimated_diameter_max;
+    public void setEstimatedDiameterMax(double estimatedDiameterMax) {
+        this.estimatedDiameterMax = estimatedDiameterMax;
     }
 }

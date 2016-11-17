@@ -33,12 +33,5 @@ public class AsteroidsAreDopeServerApplication {
 					apiFullURL, NearEarthObjectBrowse.class);
 			log.info(neoList.toString());
 		};
-//		return args -> {
-//			ResponseEntity<Object[]> responseEntity =
-//					restTemplate.getForEntity(apiFullURL, Object[].class);
-//			Object[] apiObjects = responseEntity.getBody();
-//			MediaType contentType = responseEntity.getHeaders().getContentType();
-//			HttpStatus statusCode = responseEntity.getStatusCode();
-//		};
 	}
 }

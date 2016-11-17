@@ -7,33 +7,33 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RelativeVelocity {
-    private String kilometers_per_second;
-    private String kilometers_per_hour;
-    private String miles_per_hour;
+    private String kilometersPerSecond;
+    private String kilometersPerHour;
+    private String milesPerHour;
 
     public RelativeVelocity() {}
 
-    public String getKilometers_per_second() {
-        return kilometers_per_second;
+    public String getKilometersPerSecond() {
+        return kilometersPerSecond;
     }
 
-    public void setKilometers_per_second(String kilometers_per_second) {
-        this.kilometers_per_second = kilometers_per_second;
+    public void setKilometersPerSecond(String kilometersPerSecond) {
+        this.kilometersPerSecond = kilometersPerSecond;
     }
 
-    public String getKilometers_per_hour() {
-        return kilometers_per_hour;
+    public String getKilometersPerHour() {
+        return kilometersPerHour;
     }
 
-    public void setKilometers_per_hour(String kilometers_per_hour) {
-        this.kilometers_per_hour = kilometers_per_hour;
+    public void setKilometersPerHour(String kilometersPerHour) {
+        this.kilometersPerHour = kilometersPerHour;
     }
 
-    public String getMiles_per_hour() {
-        return miles_per_hour;
+    public String getMilesPerHour() {
+        return milesPerHour;
     }
 
-    public void setMiles_per_hour(String miles_per_hour) {
-        this.miles_per_hour = miles_per_hour;
+    public void setMilesPerHour(String milesPerHour) {
+        this.milesPerHour = milesPerHour;
     }
 }

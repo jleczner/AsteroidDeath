@@ -1,13 +1,19 @@
 package leczner.jon.AsteroidsAreDopeServer.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Created by jonathanleczner on 11/5/16.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Page {
-    private int size, total_elements, total_pages, number;
+    private int size;
+    @JsonProperty("total_elements")
+    private int totalElements;
+    @JsonProperty("total_pages")
+    private int totalPages;
+    private int number;
 
     public Page() {
     }
@@ -20,20 +26,20 @@ public class Page {
         this.size = size;
     }
 
-    public int getTotal_elements() {
-        return total_elements;
+    public int getTotalElements() {
+        return totalElements;
     }
 
-    public void setTotal_elements(int total_elements) {
-        this.total_elements = total_elements;
+    public void setTotalElements(int totalElements) {
+        this.totalElements = totalElements;
     }
 
-    public int getTotal_pages() {
-        return total_pages;
+    public int getTotalPages() {
+        return totalPages;
     }
 
-    public void setTotal_pages(int total_pages) {
-        this.total_pages = total_pages;
+    public void setTotalPages(int totalPages) {
+        this.totalPages = totalPages;
     }
 
     public int getNumber() {

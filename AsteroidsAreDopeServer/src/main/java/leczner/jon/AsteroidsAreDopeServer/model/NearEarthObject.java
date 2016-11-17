@@ -15,14 +15,14 @@ public class NearEarthObject {
 
     private NeoLinks links;
     @Id
-    private String neo_reference_id;
+    private String neoReferenceId;
     private String name;
-    private String nasa_jpl_url;
-    private double absolute_magnitude_h;
-    private EstimatedDiameter estimated_diameter;
-    private boolean is_potentially_hazardous_asteroid;
-    private List<CloseApproachData> close_approach_data;
-    private OrbitalData orbital_data;
+    private String nasaJPLUrl;
+    private double absoluteMagnitudeH;
+    private EstimatedDiameter estimatedDiameter;
+    private boolean isPotentiallyHazardousAsteroid;
+    private List<CloseApproachData> closeApproachData;
+    private OrbitalData orbitalData;
 
     public NearEarthObject() {
     }
@@ -35,12 +35,12 @@ public class NearEarthObject {
         this.links = links;
     }
 
-    public String getNeo_reference_id() {
-        return neo_reference_id;
+    public String getNeoReferenceId() {
+        return neoReferenceId;
     }
 
-    public void setNeo_reference_id(String neo_reference_id) {
-        this.neo_reference_id = neo_reference_id;
+    public void setNeoReferenceId(String neoReferenceId) {
+        this.neoReferenceId = neoReferenceId;
     }
 
     public String getName() {
@@ -51,59 +51,59 @@ public class NearEarthObject {
         this.name = name;
     }
 
-    public String getNasa_jpl_url() {
-        return nasa_jpl_url;
+    public String getNasaJPLUrl() {
+        return nasaJPLUrl;
     }
 
-    public void setNasa_jpl_url(String nasa_jpl_url) {
-        this.nasa_jpl_url = nasa_jpl_url;
+    public void setNasaJPLUrl(String nasaJPLUrl) {
+        this.nasaJPLUrl = nasaJPLUrl;
     }
 
-    public Double getAbsolute_magnitude_h() {
-        return absolute_magnitude_h;
+    public double getAbsoluteMagnitudeH() {
+        return absoluteMagnitudeH;
     }
 
-    public void setAbsolute_magnitude_h(Double absolute_magnitude_h) {
-        this.absolute_magnitude_h = absolute_magnitude_h;
+    public void setAbsoluteMagnitudeH(double absoluteMagnitudeH) {
+        this.absoluteMagnitudeH = absoluteMagnitudeH;
     }
 
-    public EstimatedDiameter getEstimated_diameter() {
-        return estimated_diameter;
+    public EstimatedDiameter getEstimatedDiameter() {
+        return estimatedDiameter;
     }
 
-    public void setEstimated_diameter(EstimatedDiameter estimated_diameter) {
-        this.estimated_diameter = estimated_diameter;
+    public void setEstimatedDiameter(EstimatedDiameter estimatedDiameter) {
+        this.estimatedDiameter = estimatedDiameter;
     }
 
-    public boolean is_potentially_hazardous_asteroid() {
-        return is_potentially_hazardous_asteroid;
+    public boolean isPotentiallyHazardousAsteroid() {
+        return isPotentiallyHazardousAsteroid;
     }
 
-    public void setIs_potentially_hazardous_asteroid(boolean is_potentially_hazardous_asteroid) {
-        this.is_potentially_hazardous_asteroid = is_potentially_hazardous_asteroid;
+    public void setPotentiallyHazardousAsteroid(boolean potentiallyHazardousAsteroid) {
+        isPotentiallyHazardousAsteroid = potentiallyHazardousAsteroid;
     }
 
-    public List<CloseApproachData> getClose_approach_data() {
-        return close_approach_data;
+    public List<CloseApproachData> getCloseApproachData() {
+        return closeApproachData;
     }
 
-    public void setClose_approach_data(List<CloseApproachData> close_approach_data) {
-        this.close_approach_data = close_approach_data;
+    public void setCloseApproachData(List<CloseApproachData> closeApproachData) {
+        this.closeApproachData = closeApproachData;
     }
 
-    public OrbitalData getOrbital_data() {
-        return orbital_data;
+    public OrbitalData getOrbitalData() {
+        return orbitalData;
     }
 
-    public void setOrbital_data(OrbitalData orbital_data) {
-        this.orbital_data = orbital_data;
+    public void setOrbitalData(OrbitalData orbitalData) {
+        this.orbitalData = orbitalData;
     }
 
     @Override
     public String toString() {
         StringBuilder values = new StringBuilder("NEO(");
         values.append("ID: ");
-        values.append(neo_reference_id);
+        values.append(neoReferenceId);
         values.append(")");
         return values.toString();
     }

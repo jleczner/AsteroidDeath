@@ -1,6 +1,6 @@
 package leczner.jon.AsteroidsAreDopeServer.controller;
 
-import leczner.jon.AsteroidsAreDopeServer.model.NearEarthObjectBrowse;
+import leczner.jon.AsteroidsAreDopeServer.model.NearEarthObject;
 import leczner.jon.AsteroidsAreDopeServer.model.NearEarthObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,17 +18,17 @@ public class NearEarthObjectController {
     NearEarthObjectRepository repo;
 
     @RequestMapping(value = "asteroids", method = RequestMethod.GET)
-    public List<NearEarthObjectBrowse> list() {
+    public List<NearEarthObject> list() {
         return repo.findAll();
     }
 
     @RequestMapping(value = "asteroids/{id}", method = RequestMethod.GET)
-    public NearEarthObjectBrowse get(@PathVariable String id) {
+    public NearEarthObject get(@PathVariable String id) {
         return repo.findOne(id);
     }
 
     @RequestMapping(value = "asteroids", method = RequestMethod.POST)
-    public NearEarthObjectBrowse create(@RequestBody NearEarthObjectBrowse neo) {
+    public NearEarthObject create(@RequestBody NearEarthObject neo) {
         return repo.save(neo);
     }
 }

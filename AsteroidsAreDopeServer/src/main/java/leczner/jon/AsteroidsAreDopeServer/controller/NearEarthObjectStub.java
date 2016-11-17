@@ -60,7 +60,7 @@ public class NearEarthObjectStub {
     }
 
     public static NearEarthObject create(NearEarthObject nearEarthObject) {
-        idIndex = nearEarthObject.getNeo_reference_id();
+        idIndex = nearEarthObject.getNeoReferenceId();
         nearEarthObjects.put(idIndex, nearEarthObject);
         return nearEarthObject;
     }
